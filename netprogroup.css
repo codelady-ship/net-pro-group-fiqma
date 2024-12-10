@@ -6,7 +6,7 @@
 html{font-size:calc(2vw+8px);}
   @font-face{src: url(./font/fa-regular-400.ttf);
   }
-  nav{padding: 1%;
+  nav{padding: 0.5%;
     color: aliceblue;
     display: flex;
     justify-content: space-evenly;
@@ -28,14 +28,22 @@ html{font-size:calc(2vw+8px);}
   header{
     display: flex;
     justify-content: space-evenly;
-    padding: 1rem;
+    padding: 0.5rem;
   }
-  .head .hd{
+  .head {
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     margin-left: 2rem;
   }
+  .hd {
+    color:rgba(67, 80, 114, 1) ;
+    display: flex;
+    gap: 0.2rem;
+    margin-left: 2rem;
+  }
+
   .search{
     margin-left: 2rem;
   }
@@ -44,3 +52,482 @@ html{font-size:calc(2vw+8px);}
     height: 2rem;
     margin-left:-5rem;
   }
+  .home{
+    background-image: url(./fotos/page1.png);
+    background-attachment:center ;
+    background-position: no-repeat ;
+    background-size:cover;
+    height: 80vh;
+  }
+  .brend{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    width: 8rem;
+    height: 5rem;
+    gap: 0.5rem;
+    margin: 0.5rem 33.5rem;
+
+  }
+  .brend img{
+    border-top: 1px solid;
+  }
+  .Avadanlıqlar{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: 5rem;
+    margin-top: 4rem;
+  }
+  .Avadanlıqlar h1{
+    font-size: 200% bolder;
+    color: rgba(67, 80, 114, 1);
+    width: 35rem;
+  }
+  .Avadanlıqlar a,.page2 a{
+    color:  rgba(67, 80, 114, 1);
+    border: 1px solid;
+    border-radius: 10% rgba(67, 80, 114, 1);
+    background-color: rgb(251, 252, 253);
+    padding: 1%;
+    width: 9rem;
+  }
+  .bottom{
+    color:  rgba(67, 80, 114, 1);
+   display: flex;
+   gap: 65rem;
+   margin-left: 5rem;
+   margin-top: 8rem;
+  }
+  .bottom b{
+     font-size:200%;
+  }
+  .bottom a img,.page7_top a img{
+    background-color:rgba(67, 80, 114, 1);
+    opacity: 80%;
+  }
+  /* page1 */
+  .page2,.page4,.page6,.page9,.page10{background-image: url(./fotos/haqqimizda-bg\ 1.png);
+    background-attachment:center ;
+    background-position: no-repeat ;
+    background-size:cover;
+    width: 100vw;}
+
+  .page2_l{
+    color: aliceblue;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 45rem;
+    padding: 1%;
+    margin: auto;
+  }
+  
+  .page2_l img,.page2_l a{
+    width: 8rem;
+    height: 2.5rem;
+    padding-top: 0.8rem;
+    margin: auto;
+  }
+  /* page2 son */
+  .page3{
+    display: flex;
+    flex-direction: row;
+     padding: 3%;
+  }
+  .righta{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .righta img{
+    width: 12rem;
+    height: 3rem;
+  }
+  .page3 h2,.page6 h2{
+    color: rgb(122, 133, 167);
+    font-weight: bolder;
+    font-size: 300%;
+    margin-left: 2rem;
+  }
+  /* page3 son */
+  .page4{
+    padding: 1%;
+    text-align: center;
+    margin: auto;
+    color:rgb(248, 248, 250) ;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    position: relative;
+  }
+  .middle img{margin: 2rem;
+  }
+  .page4 p{margin: auto;
+    width: 25rem;
+  } 
+  .sol{position: absolute;
+    top: 15rem;
+    left: 10rem;
+  }
+  .sag{position: absolute;
+    bottom: 10rem;
+    right:10rem ;
+  }
+  /* page4 son */
+  .page5,.page8{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    background-image: url(./fotos/xidmetler-bg\ 1.png);
+  }
+  .page5 h3,.page5 h2,.page7_top h2,.page11 h2{
+    color:rgba(67, 80, 114, 1) ;
+    font-size: 200%;
+    margin-left: 2rem;
+  }
+  .page5_div{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container{
+    text-align: center;
+    border: 1px solid  rgba(67, 80, 114, 1) ;
+    border-radius: 10%;
+    width: 22rem;
+    height: 18rem;
+    padding: 2%;
+    margin: 1%;
+  }
+  .container img{
+    background-color: rgb(184, 188, 194);
+    border: 1px solid  rgba(67, 80, 114, 1);
+    border-radius: 50%;
+    padding: 5%;
+  }
+  /* page5 son */
+  .page6{
+    display: flex;
+    padding: 1%;
+  }
+  .page6 h2{
+    color: aliceblue;
+  }
+  .sah {
+    margin-left: 10rem;
+    display: flex;
+     flex-direction: row;
+     gap: 5rem;
+  }
+  .sah img{
+    width: 10rem;
+    height: 3rem;
+    background-color: aliceblue;
+  }
+  /* page6 son */
+  .page7_top {
+    display: flex;
+    padding: 1%;
+  }
+  .page7_top h2,.page11 h2{
+    margin-right: 65rem;
+    margin-left: 3rem;
+  }
+  .page7 img{
+    margin-left: 4rem;
+    width: 15rem;
+    height: 15rem;
+  }
+  /* page7 son */
+  .page8{
+    color:  rgba(67, 80, 114, 1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+  }
+  .form input{
+    margin: 1rem 20rem ;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    width: 15rem;
+    height: 2rem;
+  }
+  textarea{
+    position: absolute;
+    margin-left: 37rem;
+    top: 8rem;
+  }
+  .submit{color:  rgb(236, 238, 243);
+    background-color:  rgba(67, 80, 114, 1);;
+    margin-left: 5rem;
+  }
+  /* page8 son */
+  .page9{
+    display: flex;
+    color: aliceblue;
+    gap: 5rem;
+    padding: 2%;
+  }
+  .son,.meil{ 
+    color: aliceblue;
+   display: flex;
+   align-items:center;
+  }
+  .elaqe {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+  .page9_logo{
+    margin-left: 9rem;
+    display: flex;
+    flex-direction:column ;
+    justify-content: space-evenly;
+  }
+h4 img{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+/* page9 son */
+.page10{
+  padding: 2%;
+  color: aliceblue;
+  text-align: center;
+}
+.page11 h2{
+  width: 55rem;
+}
+.page11_div{
+  display: flex;
+  flex-wrap: wrap;
+}
+.cont,.conta{text-align: center;
+  border: 1px solid  rgba(67, 80, 114, 1) ;
+  border-radius: 10%;
+  width: 18rem;
+  height: 23rem;
+  padding: 2%;
+  gap: 2rem;
+  margin: 1% ; 
+}
+.cont p,.conta p{
+color: rgb(84, 85, 88);
+padding: 1%;
+  margin-top: 0.5rem;
+  border-top:1px solid ;
+}
+.conta{
+  margin-left: 5rem;
+  height: 22rem;
+}
+.cont{
+  margin-left: 2rem;
+}
+.cont h3,.conta h3{
+  color:  rgba(67, 80, 114, 1);
+   width: 15rem;
+}
+.cont img,.conta img{
+  width: 15rem;
+  height: 10rem;
+}
+/* page11 son */
+.page12_div{
+  margin-left: 5%;
+  padding: 1%;
+  display:flex;
+}
+.left{
+  border: 1px solid  rgba(67, 80, 114, 1) ;
+  width: 45rem;
+  height: 26rem;
+  padding: 2%;
+  margin: 1%;
+}
+.left h3{
+  padding: 3%;
+  color: aliceblue;
+  background-color:  rgba(67, 80, 114, 1);
+}
+.left a {
+  display: block;
+  margin: 0.5%;
+  gap: 0.1rem;
+  padding: 3%;
+  color: rgba(67, 80, 114, 1);
+  background-color:  rgb(235, 236, 240);
+}
+
+.right{
+  display: flex;
+  flex-direction: column;
+ justify-content: space-evenly;
+ gap: 1rem;
+padding: 0 5%;}
+.part{
+  border: 1px solid rgba(244, 244, 244, 1) ;
+  width: 48rem;
+  display: flex;
+  margin: 1%;
+  gap: 2rem;
+  background-color:rgba(244, 244, 244, 1) ;
+}
+.part .page12_img{
+  width: 5rem;
+  height: 5rem;
+  margin: 2rem;
+}
+.right .myh3{
+  padding: 0.5rem;
+  color: rgb(56, 70, 104);;
+  width: 25rem;
+}
+.right .myp{
+  width: 45rem;
+ color: rgba(67, 80, 114, 1);
+}
+.mp{
+  margin: 1%;
+  color: rgba(67, 80, 114, 1);
+}
+.Down{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.donload {
+  display: flex;
+}
+.donload img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.kecid{
+  display: flex;
+  margin-left:23rem ;
+}
+
+.kecid  img{
+  width: 1rem;
+  height: 1rem;
+  margin-top: 1.5rem;
+
+}
+.kecid  a{
+  color: aliceblue;
+  padding: 0.5rem;
+  margin: 1rem;
+  border: 1px solid  rgba(67, 80, 114, 1) ;
+  border-radius: 10%;
+  background-color:  rgb(155, 164, 185);
+}
+/* page12 son */
+.page13{
+  display: flex;
+  position: relative;
+}
+
+.page13_div{
+  color:rgba(67, 80, 114, 1) ;
+  border: 1px solid rgba(67, 80, 114, 1)  ;
+  border-radius: 10%;
+  padding: 2%;
+  width: 15rem;
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 8rem;
+}
+.page13_div img{
+  border: 1px solid  rgba(67, 80, 114, 1) ;
+  padding: 2%;
+  background-color:rgba(67, 80, 114, 1)  ;
+  border-radius: 10%;
+  width: 2rem;
+  height: 2rem;
+}
+.elaqe_sag{
+  display: flex;
+  flex-direction: column;
+  
+}
+.elaqe_sag  input{
+  margin: 0.9rem;
+  padding: 2.5%;
+}
+.elaqe_sag textarea{
+  position: absolute;
+  right: 10rem;
+  top: 4rem;
+}
+.elaqe_sag h2,.elaqe_sag p{
+  text-align: center;
+  color:rgba(67, 80, 114, 1);
+  margin-left: 2rem;
+}
+.map{
+  background-image: url(./fotos/Screen\ Shot\ 2022-02-01\ at\ 12.19\ 1.png);
+  background-attachment:center ;
+  background-position: no-repeat ;
+  background-size:cover;
+  width: 100vw;
+  height:30vw;
+}
+/* page13 son */
+.page14{
+  display: flex;
+  padding: 2rem 15%;
+  color:rgba(67, 80, 114, 1) ;
+}
+.page14 img{
+  width: 22rem;
+  height: 15rem;
+  margin: 1rem;
+}
+.page14 p{
+ width: 25rem;
+ padding: 2%;
+}
+/* page14 son */
+.page15{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 8rem;
+}
+.qalareya{
+  text-align: center;
+  color:rgba(67, 80, 114, 1);
+  margin: 1rem;
+}
+.page15 img{
+  width: 15rem;
+  height: 15rem;
+  margin: 1rem;
+  border-radius: 10%;
+}
+/* page15 son */
+.page16{
+  display: flex;
+  margin-left: 15rem;
+}
+.page16_sol{
+  color:rgba(67, 80, 114, 1) ;
+  margin-top: 5rem;
+}
+.page16_sol h3{
+  text-align: center;
+  width: 10rem;
+ margin:  2rem 3rem;
+}
+.page16_sol a {
+  color: rgb(229, 231, 236) ;
+  border: 1px solid;
+  margin-left: 3rem;
+  padding: 5%;
+  background-color: rgba(67, 80, 114, 1) ;
+  box-shadow: 1px 1px 5px  rgba(67, 80, 114, 1) ;
+}
