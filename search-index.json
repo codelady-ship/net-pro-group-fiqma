@@ -1,0 +1,187 @@
+[
+ {
+  "t": "Əsas səhifə",
+  "u": "index.html",
+  "d": "Səhifə"
+ },
+ {
+  "t": "Haqqımızda",
+  "u": "haqqimizda.html",
+  "d": "Səhifə"
+ },
+ {
+  "t": "Məhsullar",
+  "u": "mehsullar-1.html",
+  "d": "Səhifə"
+ },
+ {
+  "t": "Xidmətlər və həllər",
+  "u": "xidmetler.html",
+  "d": "Səhifə"
+ },
+ {
+  "t": "Qalereya",
+  "u": "qalereya.html",
+  "d": "Səhifə"
+ },
+ {
+  "t": "Əlaqə",
+  "u": "elaqe.html",
+  "d": "Səhifə"
+ },
+ {
+  "t": "Fasiləsiz enerji mənbələri (UPS)",
+  "u": "mehsullar-1.html",
+  "d": "Server otaqları, ofislər və data mərkəzləri üçün fasiləsiz enerji mənbələri. Elektrik kəsiləndə avadanlıq işləməyə davam edir, gərginlik dalğalanmalarından qorunur və məlumat itkisi yaranmır."
+ },
+ {
+  "t": "DC enerji sistemləri",
+  "u": "mehsullar-2.html",
+  "d": "Telekom qovşaqları və data mərkəzləri üçün etibarlı, genişlənə bilən 48 V DC enerji sistemləri. Rektifikator modulları işləyə-işləyə dəyişdirilə bilir."
+ },
+ {
+  "t": "Enerji paylanması",
+  "u": "mehsullar-3.html",
+  "d": "Rack və şkaflar daxilində enerjinin təhlükəsiz paylanması üçün PDU-lar və paylayıcı panellər. Hər çıxışın yükünü izləmək mümkündür."
+ },
+ {
+  "t": "Sənaye AC və DC sistemləri",
+  "u": "mehsullar-4.html",
+  "d": "Neft-qaz, energetika və istehsal obyektləri üçün ağır iş şəraitinə davamlı AC və DC enerji sistemləri."
+ },
+ {
+  "t": "Statik ötürmə açarları",
+  "u": "mehsullar-5.html",
+  "d": "İki müstəqil enerji mənbəyi arasında millisaniyələr ərzində avtomatik keçid. Bir mənbə sıradan çıxsa, yük kəsintisiz digərinə ötürülür."
+ },
+ {
+  "t": "Enerji idarəetməsi və monitorinq",
+  "u": "mehsullar-6.html",
+  "d": "UPS, PDU və iqlim avadanlığının vəziyyətini bir paneldən izləmək üçün kartlar, sensorlar və proqram təminatı. Problem yarananda dərhal bildiriş alırsınız."
+ },
+ {
+  "t": "Liebert® EXM2 UPS",
+  "u": "mehsullar-1.html",
+  "d": "Orta ölçülü kritik sistemlər üçün monoblok UPS. Yüksək səmərəlilik, kompakt ölçü və asan texniki xidmət."
+ },
+ {
+  "t": "Vertiv™ Edge Lithium-Ion UPS, 1500–3000 VA",
+  "u": "mehsullar-1.html",
+  "d": "Litium-ion batareyalı line-interactive UPS. Server və şəbəkə avadanlığını qısa kəsintilərdə ehtiyat enerji ilə təmin edir."
+ },
+ {
+  "t": "Liebert® GXT5 UPS, 750 VA – 20 kVA",
+  "u": "mehsullar-1.html",
+  "d": "Online ikiqat çevirmə texnologiyası ilə davamlı enerji keyfiyyəti. Rack və ya qüllə şəklində quraşdırılır."
+ },
+ {
+  "t": "Liebert® Trinergy™ Cube, 150 kW – 3.4 MW",
+  "u": "mehsullar-1.html",
+  "d": "Böyük data mərkəzləri üçün modul tipli UPS. Tələbat artdıqca gücü mərhələli şəkildə artırmaq mümkündür."
+ },
+ {
+  "t": "Liebert® GXT RT+ UPS",
+  "u": "mehsullar-1.html",
+  "d": "Bir fazalı, 0.9 güc əmsallı UPS. Geniş giriş gərginliyi diapazonunda qoşulmuş cihazları qoruyur."
+ },
+ {
+  "t": "48 V DC enerji şkafı",
+  "u": "mehsullar-2.html",
+  "d": "Rektifikatorlar, batareya qrupları və paylayıcı panel bir şkafda. Telekom və şəbəkə qovşaqları üçün uyğundur."
+ },
+ {
+  "t": "Kompakt rack tipli DC modul",
+  "u": "mehsullar-2.html",
+  "d": "19 düymlük rack-a quraşdırılan kompakt DC enerji modulu. Kiçik server otaqları üçün nəzərdə tutulub."
+ },
+ {
+  "t": "Ağıllı rack PDU",
+  "u": "mehsullar-3.html",
+  "d": "Hər rozetka üzrə enerji sərfiyyatını göstərən və uzaqdan idarə olunan paylayıcı blok."
+ },
+ {
+  "t": "Modul tipli paylayıcı panel",
+  "u": "mehsullar-3.html",
+  "d": "Server otağı üçün avtomatik açarlı, genişlənə bilən paylayıcı panel."
+ },
+ {
+  "t": "Mərtəbə tipli paylayıcı şkaf",
+  "u": "mehsullar-3.html",
+  "d": "Data mərkəzində sıralar üzrə enerji paylanması üçün mərkəzi şkaf."
+ },
+ {
+  "t": "Sənaye tipli UPS sistemi",
+  "u": "mehsullar-4.html",
+  "d": "Toz, rütubət və yüksək temperaturda işləmək üçün gücləndirilmiş korpuslu UPS."
+ },
+ {
+  "t": "Rack tipli statik ötürmə açarı",
+  "u": "mehsullar-5.html",
+  "d": "Bir girişli serverləri iki enerji mənbəyinə qoşmaq üçün 1U ölçülü açar."
+ },
+ {
+  "t": "Orta güclü ötürmə açarı",
+  "u": "mehsullar-5.html",
+  "d": "Server otağının bütöv sırasını qorumaq üçün statik ötürmə açarı."
+ },
+ {
+  "t": "Mərkəzi statik ötürmə sistemi",
+  "u": "mehsullar-5.html",
+  "d": "Data mərkəzi səviyyəsində yüksək güclü yüklər üçün mərkəzi açar sistemi."
+ },
+ {
+  "t": "Şkaf tipli ötürmə həlli",
+  "u": "mehsullar-5.html",
+  "d": "Paylayıcı panel və ötürmə açarı bir şkafda birləşdirilmiş hazır həll."
+ },
+ {
+  "t": "Şəbəkə monitorinq kartı",
+  "u": "mehsullar-6.html",
+  "d": "UPS-i yerli şəbəkəyə qoşur, veb interfeys və SNMP ilə vəziyyəti göstərir."
+ },
+ {
+  "t": "Temperatur və rütubət sensorları",
+  "u": "mehsullar-6.html",
+  "d": "Server şkaflarında iqlim şəraitini izləyir və həddi aşanda xəbərdarlıq edir."
+ },
+ {
+  "t": "Mərkəzi monitorinq proqramı",
+  "u": "mehsullar-6.html",
+  "d": "Bütün enerji avadanlığını bir paneldə göstərən, hesabat hazırlayan proqram."
+ },
+ {
+  "t": "Avadanlıqların quraşdırılması və konfiqurasiyası",
+  "u": "xidmetler.html#qurasdirma",
+  "d": "Server, şəbəkə və enerji avadanlığını layihəyə uyğun quraşdırır, sazlayır və sənədləşdiririk."
+ },
+ {
+  "t": "Təhlükəsizlik xidmətləri",
+  "u": "xidmetler.html#tehlukesizlik",
+  "d": "Firewall, VPN və giriş nəzarəti qururuq, şəbəkəni müntəzəm yoxlayır və zəiflikləri aradan qaldırırıq."
+ },
+ {
+  "t": "Helpdesk xidmətləri",
+  "u": "xidmetler.html#helpdesk",
+  "d": "İş saatlarında telefon və e-poçt vasitəsilə istifadəçilərə texniki dəstək göstəririk."
+ },
+ {
+  "t": "İT xidmətləri",
+  "u": "xidmetler.html#it",
+  "d": "Ofis şəbəkəsi, serverlər, e-poçt və ehtiyat nüsxələmə sistemlərinin tam idarə olunması."
+ },
+ {
+  "t": "Ofis avadanlıqlarının təmiri və texniki xidməti",
+  "u": "xidmetler.html#temir",
+  "d": "Kompüter, printer və şəbəkə avadanlığının diaqnostikası, təmiri və profilaktik baxışı."
+ },
+ {
+  "t": "Avadanlıqların vaxtında yenilənməsi",
+  "u": "xidmetler.html#yenilenme",
+  "d": "Köhnəlmiş avadanlığı planlı şəkildə dəyişir, məlumatları itkisiz yeni sistemə köçürürük."
+ },
+ {
+  "t": "Daimi nəzarət",
+  "u": "xidmetler.html#nezaret",
+  "d": "Serverlər, UPS və şəbəkə 24/7 monitorinq olunur; problem yaranan kimi bildiriş alır və reaksiya veririk."
+ }
+]
