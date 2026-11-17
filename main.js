@@ -1,7 +1,39 @@
 // Net Pro Group – shared interactions (vanilla JS)
+
+// URL of the deployed inquiry API (backend/ on Render), without a trailing slash, e.g.
+// 'https://net-pro-group-api.onrender.com'. Empty = contact forms open the mail app (mailto).
+// For local testing a page also accepts ?api=<url>, but ONLY when it runs on localhost:
+// on the live site a crafted link must not be able to send visitors' messages elsewhere.
+const NPG_API_URL = '';
+
 (function () {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const IS_LOCAL = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+  const API = ((IS_LOCAL && new URLSearchParams(location.search).get('api')) || NPG_API_URL).replace(/\/$/, '');
+  const API_TIMEOUT = 8000;
+
+  // fetch with a timeout; rejects with { offline: true } on network errors / timeouts
+  async function api(path, body) {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), API_TIMEOUT);
+    try {
+      const res = await fetch(API + path, {
+        method: body ? 'POST' : 'GET',
+        headers: body ? { 'Content-Type': 'application/json' } : undefined,
+        body: body ? JSON.stringify(body) : undefined,
+        signal: ctrl.signal,
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw Object.assign(new Error(data.error || 'HTTP ' + res.status), { status: res.status, data });
+      return data;
+    } catch (err) {
+      if (!err.status) err.offline = true;
+      throw err;
+    } finally {
+      clearTimeout(timer);
+    }
+  }
 
   /* Mobile menu */
   const toggle = $('.nav-toggle');
@@ -83,14 +115,73 @@
     lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
   }
 
-  /* Contact forms: validate, then open the mail app with a prepared message */
-  $$('.contact-form').forEach(form => {
+  /* Contact forms: validate, then send to the API (saved as an inquiry).
+     Without the API (not set, asleep or unreachable) the mail app opens with a prepared message. */
+  const forms = $$('.contact-form');
+  // Resolves true when the API and its database answer within the timeout.
+  const apiReady = API && forms.length
+    ? api('/api/health')
+        .then(h => {
+          const up = h.ok === true && h.db === 'up';
+          if (up) $$('.form-note').forEach(n => { n.textContent = 'Mesajınız birbaşa bizə göndərilir, cavabı e-poçtla alacaqsınız.'; });
+          return up;
+        })
+        .catch(() => false)
+    : Promise.resolve(false);
+  const FIELD_MAP = { name: 'ad', email: 'email', phone: 'telefon', message: 'mesaj' };
+
+  forms.forEach(form => {
     const status = $('.form-status', form);
     const params = new URLSearchParams(location.search);
     const topic = params.get('movzu');
     if (topic) form.mesaj.value = `Salam! "${topic}" haqqında məlumat almaq istəyirəm.`;
 
-    form.addEventListener('submit', e => {
+    // Honeypot for spam bots: hidden from people and screen readers.
+    const trap = document.createElement('input');
+    trap.type = 'text';
+    trap.name = 'website';
+    trap.tabIndex = -1;
+    trap.autocomplete = 'off';
+    trap.setAttribute('aria-hidden', 'true');
+    trap.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0';
+    form.appendChild(trap);
+
+    const sendToApi = async () => {
+      const btn = $('button[type="submit"]', form);
+      btn.disabled = true;
+      status.textContent = 'Göndərilir…';
+      status.className = 'form-status';
+      try {
+        const data = await api('/api/inquiries', {
+          name: form.ad.value.trim(),
+          email: form.email.value.trim(),
+          phone: form.telefon.value.trim(),
+          message: form.mesaj.value.trim(),
+          topic: topic || '',
+          page: location.pathname.split('/').pop() || 'index.html',
+          website: trap.value,
+        });
+        // Only a real reference from our API counts as success. Anything else is treated
+        // like an unreachable API: nothing is reset and the mail-app fallback runs.
+        const reference = data && typeof data.reference === 'string' && /^NPG-[0-9A-F]{6}$/.test(data.reference) ? data.reference : null;
+        if (!reference) return false;
+        form.reset();
+        status.textContent = `Təşəkkür edirik! Mesajınız qəbul edildi. Sorğu nömrəsi: ${reference}.`;
+        status.className = 'form-status ok';
+        return true;
+      } catch (err) {
+        if (err.offline) return false; // fall back to the mail app
+        const details = (err.data && err.data.details) || [];
+        details.forEach(d => { const f = form[FIELD_MAP[d.field]]; if (f) f.classList.add('invalid'); });
+        status.textContent = details.length ? details.map(d => d.message).join(' ') : 'Mesaj göndərilmədi. Bir az sonra yenidən cəhd edin.';
+        status.className = 'form-status error';
+        return true;
+      } finally {
+        btn.disabled = false;
+      }
+    };
+
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       const fields = [form.ad, form.email, form.telefon, form.mesaj];
       fields.forEach(f => f.classList.remove('invalid'));
@@ -102,6 +193,7 @@
         bad[0].focus();
         return;
       }
+      if ((await apiReady) && (await sendToApi())) return;
       const to = form.getAttribute('action').replace('mailto:', '');
       const subject = `Saytdan sorğu – ${form.ad.value.trim()}`;
       const body = `Ad, soyad: ${form.ad.value.trim()}\nE-poçt: ${form.email.value.trim()}\nTelefon: ${form.telefon.value.trim() || '-'}\n\n${form.mesaj.value.trim()}`;
