@@ -23,7 +23,7 @@ CATS.forEach((cat, idx) => {
   };
   page(cat.file, {
     title: `${cat.name} – Məhsullar – Net Pro Group`,
-    desc: cat.intro.slice(0, 155),
+    desc: cat.metaDesc || cat.intro,
   }, banner(cat.name, [['index.html', 'Əsas səhifə'], ['mehsullar-1.html', 'Məhsullar'], ['', cat.name]]) + `    <section class="section catalog">
       <div class="wrap catalog-layout">
         <nav class="cat-nav" aria-label="Məhsul kateqoriyaları">

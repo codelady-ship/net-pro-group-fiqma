@@ -6,7 +6,7 @@ const PHONE2 = '+994 50 000 00 00', PHONE2_TEL = '+994500000000';
 const ADDRESS = 'Nümunə küçəsi 1, Bakı, Azərbaycan';
 
 const CATS = [
-  { file: 'mehsullar-1.html', name: 'Fasiləsiz enerji mənbələri (UPS)', short: 'UPS sistemləri',
+  { file: 'mehsullar-1.html', metaDesc: 'Server otaqları, ofislər və data mərkəzləri üçün fasiləsiz enerji mənbələri (UPS): elektrik kəsiləndə avadanlıq işləməyə davam edir, məlumat itirilmir.', name: 'Fasiləsiz enerji mənbələri (UPS)', short: 'UPS sistemləri',
     intro: 'Server otaqları, ofislər və data mərkəzləri üçün fasiləsiz enerji mənbələri. Elektrik kəsiləndə avadanlıq işləməyə davam edir, gərginlik dalğalanmalarından qorunur və məlumat itkisi yaranmır.',
     items: [
       ['liebert-exm2', 'Liebert® EXM2 UPS', 'Orta ölçülü kritik sistemlər üçün monoblok UPS. Yüksək səmərəlilik, kompakt ölçü və asan texniki xidmət.', 'İki qara şkaf tipli UPS bloku'],
@@ -21,19 +21,19 @@ const CATS = [
       ['kabinet', '48 V DC enerji şkafı', 'Rektifikatorlar, batareya qrupları və paylayıcı panel bir şkafda. Telekom və şəbəkə qovşaqları üçün uyğundur.', 'Qara rəngli böyük enerji şkafı'],
       ['gxt-rt', 'Kompakt rack tipli DC modul', '19 düymlük rack-a quraşdırılan kompakt DC enerji modulu. Kiçik server otaqları üçün nəzərdə tutulub.', 'Qüllə və rack tipli enerji blokları'],
     ] },
-  { file: 'mehsullar-3.html', name: 'Enerji paylanması', short: 'Paylanma',
+  { file: 'mehsullar-3.html', metaDesc: 'Enerji paylanması: rack və şkaflar daxilində enerjinin təhlükəsiz paylanması üçün PDU-lar və paylayıcı panellər. Hər çıxışın yükünü izləmək mümkündür.', name: 'Enerji paylanması', short: 'Paylanma',
     intro: 'Rack və şkaflar daxilində enerjinin təhlükəsiz paylanması üçün PDU-lar və paylayıcı panellər. Hər çıxışın yükünü izləmək mümkündür.',
     items: [
       ['edge-li-ion', 'Ağıllı rack PDU', 'Hər rozetka üzrə enerji sərfiyyatını göstərən və uzaqdan idarə olunan paylayıcı blok.', 'Rack tipli nazik qara cihaz'],
       ['liebert-gxt5', 'Modul tipli paylayıcı panel', 'Server otağı üçün avtomatik açarlı, genişlənə bilən paylayıcı panel.', 'Üst-üstə qoyulmuş iki rack tipli cihaz'],
       ['kabinet', 'Mərtəbə tipli paylayıcı şkaf', 'Data mərkəzində sıralar üzrə enerji paylanması üçün mərkəzi şkaf.', 'Qara rəngli böyük şkaf'],
     ] },
-  { file: 'mehsullar-4.html', name: 'Sənaye AC və DC sistemləri', short: 'Sənaye sistemləri',
+  { file: 'mehsullar-4.html', metaDesc: 'Sənaye AC və DC sistemləri: neft-qaz, energetika və istehsal obyektləri üçün ağır iş şəraitinə davamlı AC və DC enerji sistemləri. Net Pro Group kataloqu.', name: 'Sənaye AC və DC sistemləri', short: 'Sənaye sistemləri',
     intro: 'Neft-qaz, energetika və istehsal obyektləri üçün ağır iş şəraitinə davamlı AC və DC enerji sistemləri.',
     items: [
       ['liebert-exm2', 'Sənaye tipli UPS sistemi', 'Toz, rütubət və yüksək temperaturda işləmək üçün gücləndirilmiş korpuslu UPS.', 'İki qara şkaf tipli enerji bloku'],
     ] },
-  { file: 'mehsullar-5.html', name: 'Statik ötürmə açarları', short: 'Ötürmə açarları',
+  { file: 'mehsullar-5.html', metaDesc: 'Statik ötürmə açarları: iki müstəqil enerji mənbəyi arasında millisaniyələr ərzində avtomatik keçid. Bir mənbə sıradan çıxsa, yük digərinə ötürülür.', name: 'Statik ötürmə açarları', short: 'Ötürmə açarları',
     intro: 'İki müstəqil enerji mənbəyi arasında millisaniyələr ərzində avtomatik keçid. Bir mənbə sıradan çıxsa, yük kəsintisiz digərinə ötürülür.',
     items: [
       ['edge-li-ion', 'Rack tipli statik ötürmə açarı', 'Bir girişli serverləri iki enerji mənbəyinə qoşmaq üçün 1U ölçülü açar.', 'Rack tipli nazik qara cihaz'],

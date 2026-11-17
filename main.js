@@ -255,7 +255,7 @@ const NPG_API_URL = '';
     trap.tabIndex = -1;
     trap.autocomplete = 'off';
     trap.setAttribute('aria-hidden', 'true');
-    trap.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0';
+    trap.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;padding:0;border:0;opacity:0';
     form.appendChild(trap);
 
     const setError = (f, msg) => {

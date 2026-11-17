@@ -13,7 +13,7 @@ const STEPS = [
 module.exports = function (page) {
 page('haqqimizda.html', {
   title: 'Haqqımızda – Net Pro Group',
-  desc: 'Net Pro Group haqqında: İT infrastrukturu, şəbəkə və enerji avadanlıqları üzrə xidmət göstərən komanda, iş prinsiplərimiz və yanaşmamız.',
+  desc: 'Net Pro Group haqqında: İT infrastrukturu, şəbəkə və enerji avadanlıqları üzrə xidmət göstərən komanda, iş prinsiplərimiz və müştərilərə yanaşmamız.',
 }, banner('Haqqımızda', [['index.html', 'Əsas səhifə'], ['', 'Haqqımızda']]) + `    <section class="section about-section">
       <div class="wrap about-row">
         <div class="about-media">
