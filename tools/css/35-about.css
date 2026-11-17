@@ -1,0 +1,30 @@
+/* About page (haqqimizda.html) */
+.about-row { display: grid; gap: var(--space-7); align-items: center; }
+@media (min-width: 900px) {
+  .about-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: var(--space-8); }
+  .about-row--reverse .about-media { order: 2; }
+}
+.about-media { position: relative; }
+.about-media img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+.about-section { isolation: isolate; }
+.about-copy .section-title { margin-top: var(--space-3); }
+.about-copy .lead { margin-top: var(--space-5); }
+.about-copy > p:not(.lead):not(.eyebrow) { margin-top: var(--space-4); color: var(--text-muted); }
+.about-steps { display: grid; gap: var(--space-3); margin-top: var(--space-6); }
+.about-steps li {
+  display: flex; gap: var(--space-4); align-items: flex-start; padding: var(--space-4) var(--space-5);
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.step-ico { display: grid; place-items: center; flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--accent-50); color: var(--accent-700); }
+.about-steps li > span:last-child { padding-top: 4px; }
+
+.cta-band {
+  display: grid; gap: var(--space-5); align-items: center; padding: clamp(28px, 1rem + 3vw, 56px); border-radius: var(--radius-lg);
+  color: var(--text-on-dark);
+  background:
+    radial-gradient(60% 90% at 100% 0%, rgba(31, 182, 213, .28), transparent 60%),
+    linear-gradient(160deg, var(--ink-800), var(--ink-900));
+}
+.cta-band .section-title { color: #fff; }
+.cta-band .lead { margin-top: var(--space-3); }
+@media (min-width: 900px) { .cta-band { grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-7); } }

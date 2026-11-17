@@ -1,0 +1,17 @@
+/* 404 page */
+.not-found {
+  padding-block: clamp(48px, 2rem + 6vw, 128px);
+  background: radial-gradient(60% 60% at 90% 10%, var(--accent-50), transparent 70%), var(--surface);
+}
+.nf-grid { display: grid; gap: var(--space-7); align-items: center; }
+@media (min-width: 900px) { .nf-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-8); } }
+.nf-code {
+  font-size: clamp(5rem, 3rem + 10vw, 10rem); font-weight: 700; line-height: .9; letter-spacing: -.06em;
+  background: linear-gradient(120deg, var(--ink-900) 20%, var(--brand-600) 55%, var(--accent-600));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.nf-copy .eyebrow { margin-top: var(--space-5); }
+.nf-copy h1 { font-size: var(--fs-2xl); margin-top: var(--space-3); }
+.nf-copy .lead { margin-top: var(--space-4); }
+.nf-copy .btn-row { margin-top: var(--space-6); }
+.nf-media img { width: 100%; aspect-ratio: 648 / 398; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }

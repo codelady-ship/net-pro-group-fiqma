@@ -24,7 +24,9 @@ for (const name of ['home', 'about', 'catalog', 'services', 'gallery', 'contact'
 
 // 404.html is served from any depth, so use absolute asset paths there
 let nf = fs.readFileSync(OUT + '404.html', 'utf8');
-nf = nf.replace(/(href|src|srcset)="(?!https?:|mailto:|tel:|#|\/)([^"]+)"/g, '$1="/net-pro-group-fiqma/$2"');
+const abs = u => /^(https?:|mailto:|tel:|#|\/|data:)/.test(u) ? u : '/net-pro-group-fiqma/' + u;
+nf = nf.replace(/\b(href|src)="([^"]+)"/g, (m, a, u) => `${a}="${abs(u)}"`);
+nf = nf.replace(/\b(srcset|imagesrcset)="([^"]+)"/g, (m, a, v) => `${a}="${v.split(',').map(s => { const [u, ...d] = s.trim().split(/\s+/); return [abs(u), ...d].join(' '); }).join(', ')}"`);
 fs.writeFileSync(OUT + '404.html', nf);
 
 // CSS and JS bundles (plain concatenation, no dependencies)

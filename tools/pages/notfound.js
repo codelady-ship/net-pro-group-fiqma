@@ -1,6 +1,3 @@
-const { HOURS, FAQ, SITE, EMAIL, PHONE1, PHONE1_TEL, PHONE2, PHONE2_TEL, ADDRESS, CATS, SERVICES, NAV, slides, prodSlides, gallery, partners, brands } = require('../data');
-const { esc, banner } = require('../lib/layout');
-const { contactForm } = require('../lib/form');
 const { img } = require('../lib/img');
 const { icon } = require('../lib/icons');
 
@@ -9,13 +6,19 @@ const notFound = (file) => page(file, {
   title: 'Səhifə tapılmadı – Net Pro Group', desc: 'Axtardığınız səhifə tapılmadı.', noindex: true,
 }, `    <section class="not-found">
       <div class="wrap nf-grid">
-        <div>
-          <img src="img/ikon/404.png" alt="404" width="270" height="109">
+        <div class="nf-copy">
+          <p class="nf-code" aria-hidden="true">404</p>
+          <p class="eyebrow">Xəta 404</p>
           <h1>Axtardığınız səhifə tapılmadı!</h1>
-          <p>Səhifə köçürülmüş və ya silinmiş ola bilər.</p>
-          <p class="nf-actions"><a href="index.html" class="btn btn-solid">Əsas səhifəyə qayıt</a> <a href="search.html" class="btn btn-outline-dark">Saytda axtar</a></p>
+          <p class="lead">Səhifə köçürülmüş və ya silinmiş ola bilər.</p>
+          <div class="btn-row">
+            <a href="index.html" class="btn btn--primary">${icon('home')} Əsas səhifəyə qayıt</a>
+            <a href="search.html" class="btn btn--ghost">${icon('search')} Saytda axtar</a>
+          </div>
         </div>
-        <img src="img/xeta-404.webp" alt="Xəbərdarlıq lenti ilə əhatə olunmuş server şkafları" width="648" height="398" loading="lazy">
+        <div class="nf-media">
+          ${img('xeta-404.webp', { alt: 'Xəbərdarlıq lenti ilə əhatə olunmuş server şkafları', eager: true })}
+        </div>
       </div>
     </section>
 `, 'none');

@@ -104,4 +104,18 @@ const FAQ = [
   ['İş saatlarınız necədir?', 'Bazar ertəsi – Cümə: 09:00 – 18:00.'],
 ];
 
-module.exports = { HOURS, FAQ, SITE, EMAIL, PHONE1, PHONE1_TEL, PHONE2, PHONE2_TEL, ADDRESS, CATS, SERVICES, NAV, slides, prodSlides, gallery, partners, brands };
+// Home hero time-lapse video (owner request, 2026-11-17). The clip is generated separately and committed to
+// assets/media/. Keep ready:false until both the MP4 and the poster (= the clip's final frame) exist – while false
+// the hero shows the current design with existing repo images only (no placeholder). The build fails if ready:true
+// and a file is missing. webm is optional (set to '' if there is none).
+const HERO_VIDEO = {
+  ready: false,
+  mp4: 'assets/media/hero-build.mp4',
+  webm: '',
+  poster: 'assets/media/hero-build-poster.jpg',
+  width: 1920, height: 1080,
+  caption: 'AI ilə yaradılmış video',
+  label: 'Boş server otağında rack-lərin, kabel kanallarının, kommutatorların və serverlərin quraşdırılmasını göstərən timelapse video',
+};
+
+module.exports = { HERO_VIDEO, HOURS, FAQ, SITE, EMAIL, PHONE1, PHONE1_TEL, PHONE2, PHONE2_TEL, ADDRESS, CATS, SERVICES, NAV, slides, prodSlides, gallery, partners, brands };

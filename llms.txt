@@ -1,0 +1,42 @@
+# Net Pro Group
+
+> Net Pro Group – İT infrastrukturu, şəbəkə və enerji avadanlıqları üzrə xidmətlər: server və şəbəkə avadanlığının quraşdırılması, UPS və DC enerji sistemləri, helpdesk və 24/7 monitorinq.
+
+Sayt Azərbaycan dilindədir. Net Pro Group kiçik və orta biznes üçün İT infrastrukturu qurur və ona xidmət göstərir; məhsul kataloqunda fasiləsiz enerji mənbələri (UPS), DC enerji, enerji paylanması, statik ötürmə açarları və monitorinq həlləri var.
+English: Net Pro Group is an Azerbaijani-language site about IT infrastructure services and power equipment (UPS, DC power, power distribution, transfer switches, monitoring).
+
+Qeyd: bu sayt Figma dizaynı əsasında hazırlanmış təlim layihəsidir; ünvan, telefon və e-poçt nümunə məlumatlardır (sample contact data on a practice project).
+
+## Səhifələr
+
+- [Əsas səhifə](https://codelady-ship.github.io/net-pro-group-fiqma/): Net Pro Group: server və şəbəkə avadanlığının quraşdırılması, UPS və DC enerji sistemləri, helpdesk və 24/7 monitorinq xidmətləri. Figma dizaynı əsasında təlim layihəsi.
+- [Haqqımızda](https://codelady-ship.github.io/net-pro-group-fiqma/haqqimizda.html): Net Pro Group haqqında: İT infrastrukturu, şəbəkə və enerji avadanlıqları üzrə xidmət göstərən komanda, iş prinsiplərimiz və yanaşmamız.
+- [Xidmətlər və həllər](https://codelady-ship.github.io/net-pro-group-fiqma/xidmetler.html): Avadanlıqların quraşdırılması, təhlükəsizlik, helpdesk, İT xidmətləri, ofis avadanlığının təmiri, avadanlıqların yenilənməsi və 24/7 monitorinq.
+- [Məhsullar](https://codelady-ship.github.io/net-pro-group-fiqma/mehsullar-1.html): Server otaqları, ofislər və data mərkəzləri üçün fasiləsiz enerji mənbələri. Elektrik kəsiləndə avadanlıq işləməyə davam edir, gərginlik dalğalanmalarından
+- [Qalereya](https://codelady-ship.github.io/net-pro-group-fiqma/qalereya.html): Data mərkəzi, server otağı, enerji və soyutma avadanlıqlarına aid illüstrativ şəkillər qalereyası.
+- [Əlaqə](https://codelady-ship.github.io/net-pro-group-fiqma/elaqe.html): Net Pro Group ilə əlaqə: sualınızı və ya sifarişinizi formla göndərin. Ünvan, telefon və e-poçt nümunə məlumatlardır.
+
+## Məhsul kateqoriyaları
+
+- [Fasiləsiz enerji mənbələri (UPS)](https://codelady-ship.github.io/net-pro-group-fiqma/mehsullar-1.html): Server otaqları, ofislər və data mərkəzləri üçün fasiləsiz enerji mənbələri. Elektrik kəsiləndə avadanlıq işləməyə davam edir, gərginlik dalğalanmalarından qorunur və məlumat itkisi yaranmır.
+- [DC enerji sistemləri](https://codelady-ship.github.io/net-pro-group-fiqma/mehsullar-2.html): Telekom qovşaqları və data mərkəzləri üçün etibarlı, genişlənə bilən 48 V DC enerji sistemləri. Rektifikator modulları işləyə-işləyə dəyişdirilə bilir.
+- [Enerji paylanması](https://codelady-ship.github.io/net-pro-group-fiqma/mehsullar-3.html): Rack və şkaflar daxilində enerjinin təhlükəsiz paylanması üçün PDU-lar və paylayıcı panellər. Hər çıxışın yükünü izləmək mümkündür.
+- [Sənaye AC və DC sistemləri](https://codelady-ship.github.io/net-pro-group-fiqma/mehsullar-4.html): Neft-qaz, energetika və istehsal obyektləri üçün ağır iş şəraitinə davamlı AC və DC enerji sistemləri.
+- [Statik ötürmə açarları](https://codelady-ship.github.io/net-pro-group-fiqma/mehsullar-5.html): İki müstəqil enerji mənbəyi arasında millisaniyələr ərzində avtomatik keçid. Bir mənbə sıradan çıxsa, yük kəsintisiz digərinə ötürülür.
+- [Enerji idarəetməsi və monitorinq](https://codelady-ship.github.io/net-pro-group-fiqma/mehsullar-6.html): UPS, PDU və iqlim avadanlığının vəziyyətini bir paneldən izləmək üçün kartlar, sensorlar və proqram təminatı. Problem yarananda dərhal bildiriş alırsınız.
+
+## Xidmətlər
+
+- [Avadanlıqların quraşdırılması və konfiqurasiyası](https://codelady-ship.github.io/net-pro-group-fiqma/xidmetler.html#qurasdirma): Server, şəbəkə və enerji avadanlığını layihəyə uyğun quraşdırır, sazlayır və sənədləşdiririk.
+- [Təhlükəsizlik xidmətləri](https://codelady-ship.github.io/net-pro-group-fiqma/xidmetler.html#tehlukesizlik): Firewall, VPN və giriş nəzarəti qururuq, şəbəkəni müntəzəm yoxlayır və zəiflikləri aradan qaldırırıq.
+- [Helpdesk xidmətləri](https://codelady-ship.github.io/net-pro-group-fiqma/xidmetler.html#helpdesk): İş saatlarında telefon və e-poçt vasitəsilə istifadəçilərə texniki dəstək göstəririk.
+- [İT xidmətləri](https://codelady-ship.github.io/net-pro-group-fiqma/xidmetler.html#it): Ofis şəbəkəsi, serverlər, e-poçt və ehtiyat nüsxələmə sistemlərinin tam idarə olunması.
+- [Ofis avadanlıqlarının təmiri və texniki xidməti](https://codelady-ship.github.io/net-pro-group-fiqma/xidmetler.html#temir): Kompüter, printer və şəbəkə avadanlığının diaqnostikası, təmiri və profilaktik baxışı.
+- [Avadanlıqların vaxtında yenilənməsi](https://codelady-ship.github.io/net-pro-group-fiqma/xidmetler.html#yenilenme): Köhnəlmiş avadanlığı planlı şəkildə dəyişir, məlumatları itkisiz yeni sistemə köçürürük.
+- [Daimi nəzarət](https://codelady-ship.github.io/net-pro-group-fiqma/xidmetler.html#nezaret): Serverlər, UPS və şəbəkə 24/7 monitorinq olunur; problem yaranan kimi bildiriş alır və reaksiya veririk.
+
+## Əlaqə (nümunə məlumat)
+
+- E-poçt: info@netprogroup.example
+- Telefon: +994 12 000 00 00, +994 50 000 00 00
+- İş saatları: B.e. – Cümə: 09:00 – 18:00

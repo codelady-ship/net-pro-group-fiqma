@@ -27,38 +27,52 @@ async function api(path, body) {
   }
 }
 
-/* Mobile menu */
+/* Header: mobile menu panel + products dropdown (click / keyboard; hover handled in CSS on desktop) */
 const toggle = $('.nav-toggle');
 const nav = $('#site-nav');
-if (toggle && nav) {
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Menyunu bağla' : 'Menyunu aç');
-  });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && nav.classList.contains('open')) {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.focus();
-    }
-  });
+const desktopMq = window.matchMedia('(min-width: 1100px)');
+
+function setMenu(open, returnFocus) {
+  if (!toggle || !nav) return;
+  nav.classList.toggle('open', open);
+  document.documentElement.classList.toggle('nav-open', open);
+  toggle.setAttribute('aria-expanded', String(open));
+  toggle.setAttribute('aria-label', open ? 'Menyunu bağla' : 'Menyunu aç');
+  // the panel covers the page: keep Tab inside header + panel while it is open
+  $$('main, footer.site-footer').forEach(el => { el.inert = open; });
+  if (open) { const first = $('.menu-link', nav); if (first) first.focus(); }
+  if (!open && returnFocus) toggle.focus();
 }
 
-/* Products dropdown (click / keyboard; hover handled in CSS) */
-$$('.dd-toggle').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const li = btn.closest('.has-dropdown');
-    const open = li.classList.toggle('open');
-    btn.setAttribute('aria-expanded', String(open));
-  });
-});
-document.addEventListener('click', e => {
-  $$('.has-dropdown.open').forEach(li => {
-    if (!li.contains(e.target)) {
-      li.classList.remove('open');
-      $('.dd-toggle', li).setAttribute('aria-expanded', 'false');
-    }
+function setDropdown(li, open, returnFocus) {
+  const btn = $('.dd-toggle', li);
+  li.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', String(open));
+  if (!open && returnFocus) btn.focus();
+}
+
+if (toggle && nav) {
+  toggle.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+  // leaving the mobile layout closes the panel so the page is never left scroll-locked
+  desktopMq.addEventListener('change', () => setMenu(false));
+}
+
+$$('.has-dropdown').forEach(li => {
+  const btn = $('.dd-toggle', li);
+  btn.addEventListener('click', () => setDropdown(li, !li.classList.contains('open')));
+  // desktop: moving focus out of the panel closes it
+  li.addEventListener('focusout', e => {
+    if (desktopMq.matches && li.classList.contains('open') && e.relatedTarget && !li.contains(e.relatedTarget)) setDropdown(li, false);
   });
 });
 
+document.addEventListener('click', e => {
+  $$('.has-dropdown.open').forEach(li => { if (desktopMq.matches && !li.contains(e.target)) setDropdown(li, false); });
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if (nav && nav.classList.contains('open')) { $$('.has-dropdown.open').forEach(li => setDropdown(li, false)); setMenu(false, true); return; }
+  const openDd = $('.has-dropdown.open');
+  if (openDd) setDropdown(openDd, false, openDd.contains(document.activeElement));
+});
