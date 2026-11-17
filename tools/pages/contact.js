@@ -12,7 +12,7 @@ const info = [
 ];
 page('elaqe.html', {
   title: 'Əlaqə – Net Pro Group',
-  desc: 'Net Pro Group ilə əlaqə: sualınızı və ya sifarişinizi formla göndərin. Ünvan, telefon və e-poçt nümunə məlumatlardır.',
+  desc: 'Net Pro Group ilə əlaqə: sualınızı və ya sifarişinizi formla göndərin və iş saatlarına baxın. Ünvan, telefon və e-poçt nümunə məlumatlardır.',
 }, banner('Əlaqə', [['index.html', 'Əsas səhifə'], ['', 'Əlaqə']]) + `    <section class="section contact-page">
       <div class="wrap contact-layout">
         <div class="contact-aside">

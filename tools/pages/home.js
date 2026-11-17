@@ -36,8 +36,8 @@ function heroVideo() {
 
 module.exports = function (page) {
 page('index.html', {
-  title: 'Net Pro Group – İT infrastrukturu, şəbəkə və enerji avadanlıqları',
-  desc: 'Net Pro Group: server və şəbəkə avadanlığının quraşdırılması, UPS və DC enerji sistemləri, helpdesk və 24/7 monitorinq xidmətləri. Figma dizaynı əsasında təlim layihəsi.',
+  title: 'Net Pro Group – İT infrastrukturu və enerji həlləri',
+  desc: 'Net Pro Group: server və şəbəkə avadanlığının quraşdırılması, UPS və DC enerji sistemləri, helpdesk və 24/7 monitorinq. Figma əsasında təlim layihəsi.',
 }, `    <section class="home-hero on-dark${HERO_VIDEO.ready ? ' home-hero--video' : ''}" aria-labelledby="hero-title">
       <div class="home-hero-media" aria-hidden="true">
         ${img('hero.webp', { eager: true, cls: 'home-hero-img', sizes: '100vw' })}

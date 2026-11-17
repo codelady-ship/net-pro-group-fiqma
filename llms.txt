@@ -9,12 +9,12 @@ Qeyd: bu sayt Figma dizaynı əsasında hazırlanmış təlim layihəsidir; ünv
 
 ## Səhifələr
 
-- [Əsas səhifə](https://codelady-ship.github.io/net-pro-group-fiqma/): Net Pro Group: server və şəbəkə avadanlığının quraşdırılması, UPS və DC enerji sistemləri, helpdesk və 24/7 monitorinq xidmətləri. Figma dizaynı əsasında təlim layihəsi.
-- [Haqqımızda](https://codelady-ship.github.io/net-pro-group-fiqma/haqqimizda.html): Net Pro Group haqqında: İT infrastrukturu, şəbəkə və enerji avadanlıqları üzrə xidmət göstərən komanda, iş prinsiplərimiz və yanaşmamız.
+- [Əsas səhifə](https://codelady-ship.github.io/net-pro-group-fiqma/): Net Pro Group: server və şəbəkə avadanlığının quraşdırılması, UPS və DC enerji sistemləri, helpdesk və 24/7 monitorinq. Figma əsasında təlim layihəsi.
+- [Haqqımızda](https://codelady-ship.github.io/net-pro-group-fiqma/haqqimizda.html): Net Pro Group haqqında: İT infrastrukturu, şəbəkə və enerji avadanlıqları üzrə xidmət göstərən komanda, iş prinsiplərimiz və müştərilərə yanaşmamız.
 - [Xidmətlər və həllər](https://codelady-ship.github.io/net-pro-group-fiqma/xidmetler.html): Avadanlıqların quraşdırılması, təhlükəsizlik, helpdesk, İT xidmətləri, ofis avadanlığının təmiri, avadanlıqların yenilənməsi və 24/7 monitorinq.
-- [Məhsullar](https://codelady-ship.github.io/net-pro-group-fiqma/mehsullar-1.html): Server otaqları, ofislər və data mərkəzləri üçün fasiləsiz enerji mənbələri. Elektrik kəsiləndə avadanlıq işləməyə davam edir, gərginlik dalğalanmalarından
-- [Qalereya](https://codelady-ship.github.io/net-pro-group-fiqma/qalereya.html): Data mərkəzi, server otağı, enerji və soyutma avadanlıqlarına aid illüstrativ şəkillər qalereyası.
-- [Əlaqə](https://codelady-ship.github.io/net-pro-group-fiqma/elaqe.html): Net Pro Group ilə əlaqə: sualınızı və ya sifarişinizi formla göndərin. Ünvan, telefon və e-poçt nümunə məlumatlardır.
+- [Məhsullar](https://codelady-ship.github.io/net-pro-group-fiqma/mehsullar-1.html): Server otaqları, ofislər və data mərkəzləri üçün fasiləsiz enerji mənbələri (UPS): elektrik kəsiləndə avadanlıq işləməyə davam edir, məlumat itirilmir.
+- [Qalereya](https://codelady-ship.github.io/net-pro-group-fiqma/qalereya.html): Data mərkəzi, server otağı, UPS, enerji və soyutma avadanlıqlarına aid illüstrativ şəkillər qalereyası: şəklə toxunun və böyük ölçüdə baxın.
+- [Əlaqə](https://codelady-ship.github.io/net-pro-group-fiqma/elaqe.html): Net Pro Group ilə əlaqə: sualınızı və ya sifarişinizi formla göndərin və iş saatlarına baxın. Ünvan, telefon və e-poçt nümunə məlumatlardır.
 
 ## Məhsul kateqoriyaları
 

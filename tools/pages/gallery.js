@@ -14,7 +14,7 @@ const galAll = [
 ];
 page('qalereya.html', {
   title: 'Qalereya – Net Pro Group',
-  desc: 'Data mərkəzi, server otağı, enerji və soyutma avadanlıqlarına aid illüstrativ şəkillər qalereyası.',
+  desc: 'Data mərkəzi, server otağı, UPS, enerji və soyutma avadanlıqlarına aid illüstrativ şəkillər qalereyası: şəklə toxunun və böyük ölçüdə baxın.',
 }, banner('Qalereya', [['index.html', 'Əsas səhifə'], ['', 'Qalereya']]) + `    <section class="section gallery-page">
       <div class="wrap">
         <div class="section-head">
