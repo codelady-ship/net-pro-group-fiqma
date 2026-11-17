@@ -2,13 +2,15 @@
 
 // URL of the deployed inquiry API (backend/ on Render), without a trailing slash, e.g.
 // 'https://net-pro-group-api.onrender.com'. Empty = contact forms open the mail app (mailto).
-// For testing, any page also accepts ?api=<url>.
+// For local testing a page also accepts ?api=<url>, but ONLY when it runs on localhost:
+// on the live site a crafted link must not be able to send visitors' messages elsewhere.
 const NPG_API_URL = '';
 
 (function () {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
-  const API = (new URLSearchParams(location.search).get('api') || NPG_API_URL).replace(/\/$/, '');
+  const IS_LOCAL = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+  const API = ((IS_LOCAL && new URLSearchParams(location.search).get('api')) || NPG_API_URL).replace(/\/$/, '');
   const API_TIMEOUT = 8000;
 
   // fetch with a timeout; rejects with { offline: true } on network errors / timeouts
@@ -150,7 +152,7 @@ const NPG_API_URL = '';
       status.textContent = 'Göndərilir…';
       status.className = 'form-status';
       try {
-        const { reference } = await api('/api/inquiries', {
+        const data = await api('/api/inquiries', {
           name: form.ad.value.trim(),
           email: form.email.value.trim(),
           phone: form.telefon.value.trim(),
@@ -159,6 +161,10 @@ const NPG_API_URL = '';
           page: location.pathname.split('/').pop() || 'index.html',
           website: trap.value,
         });
+        // Only a real reference from our API counts as success. Anything else is treated
+        // like an unreachable API: nothing is reset and the mail-app fallback runs.
+        const reference = data && typeof data.reference === 'string' && /^NPG-[0-9A-F]{6}$/.test(data.reference) ? data.reference : null;
+        if (!reference) return false;
         form.reset();
         status.textContent = `Təşəkkür edirik! Mesajınız qəbul edildi. Sorğu nömrəsi: ${reference}.`;
         status.className = 'form-status ok';

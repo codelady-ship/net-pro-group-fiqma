@@ -5,6 +5,7 @@ const assert = require("node:assert/strict");
 process.env.JWT_SECRET = "test-secret";
 process.env.ADMIN_EMAIL = "admin@test.local";
 process.env.ADMIN_PASSWORD = "test-password";
+process.env.PUBLIC_RATE_LIMIT = "200";
 
 const mongoose = require("mongoose");
 const request = require("supertest");

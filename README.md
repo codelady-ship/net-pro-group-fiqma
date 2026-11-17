@@ -13,7 +13,7 @@ A multi-page, responsive company website for **Net Pro Group**, a generic IT inf
 - 13 pages: home, about, 6 product categories, services, gallery, contact, site search and a custom 404 page.
 - Home page hero slider, product carousel and scrollable gallery (vanilla JS, keyboard-accessible buttons).
 - Products dropdown in the header; hamburger menu on mobile.
-- Contact forms with validation. With the API online the inquiry is **saved in MongoDB** and the visitor gets a reference like `NPG-3F9A1C`; the product name from the "Broşür sorğusu" link is stored as the inquiry topic. Without the API (not configured, asleep or unreachable within 8 s) the form opens the visitor's mail app with a prepared message (`mailto:`).
+- Contact forms with validation. With the API online the inquiry is **saved in MongoDB** and the visitor gets a reference like `NPG-3F9A1C` (shown only when the API really returned one; otherwise the mail-app fallback runs); the product name from the "Broşür sorğusu" link is stored as the inquiry topic. Without the API (not configured, asleep or unreachable within 8 s) the form opens the visitor's mail app with a prepared message (`mailto:`).
 - Spam protection: a hidden honeypot field (bots are stored as `spam` and hidden from the list) and rate limiting.
 - Client-side site search over pages, products and services (`search-index.json`).
 - Gallery lightbox built on the native `<dialog>` element.
@@ -66,7 +66,7 @@ npm run dev            # http://localhost:4000
 npm test               # API tests on an in-memory MongoDB
 ```
 
-Then open a page with `?api=`, e.g. `http://localhost:3000/elaqe.html?api=http://localhost:4000`.
+Then open a page with `?api=` (honoured only when the page runs on `localhost`/`127.0.0.1`, so a crafted link cannot redirect the live form), e.g. `http://localhost:3000/elaqe.html?api=http://localhost:4000`.
 
 ## Deployment
 

@@ -33,10 +33,16 @@ function createApp() {
   /* ----- Public: contact / product inquiry ----- */
   api.post("/inquiries", publicWriteLimiter(), validate(inquirySchema), async (req, res) => {
     const { website, ...data } = req.body;
-    const reference = "NPG-" + crypto.randomBytes(3).toString("hex").toUpperCase();
     // Bots that fill the hidden field get the same answer, but the inquiry is stored as spam.
-    await Inquiry.create({ ...data, reference, status: website ? "spam" : "new" });
-    res.status(201).json({ reference });
+    for (let attempt = 0; ; attempt++) {
+      const reference = "NPG-" + crypto.randomBytes(3).toString("hex").toUpperCase();
+      try {
+        await Inquiry.create({ ...data, reference, status: website ? "spam" : "new" });
+        return res.status(201).json({ reference });
+      } catch (err) {
+        if (err.code !== 11000 || attempt >= 2) throw err; // retry a reference collision
+      }
+    }
   });
 
   /* ----- Admin (JWT) ----- */
