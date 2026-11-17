@@ -1,0 +1,63 @@
+/* Design tokens – the shared contract for every tools/css file. Add tokens if needed; never rename/remove one. */
+:root {
+  /* colour: deep ink + the logo's slate navy + one "signal" accent taken from the data-centre LEDs */
+  --ink-950: #070d1a;
+  --ink-900: #0b1426;
+  --ink-800: #121e36;
+  --ink-700: #1c2a48;
+  --brand-700: #2f3a58;
+  --brand-600: #435072;   /* logo navy */
+  --brand-500: #5a6890;
+  --brand-100: #e6e9f2;
+  --brand-50: #f3f5fa;
+  --accent-500: #1fb6d5;  /* on dark backgrounds */
+  --accent-600: #0f8fab;
+  --accent-700: #0b6f86;  /* accent text/links on white: AA contrast */
+  --accent-50: #e7f8fb;
+  --text: #0f172a;
+  --text-muted: #4b5568;
+  --text-on-dark: #e8edf7;
+  --text-on-dark-muted: #a9b4cc;
+  --surface: #ffffff;
+  --surface-2: #f5f7fb;
+  --line: #e2e7f0;
+  --line-dark: rgba(255, 255, 255, .12);
+  --ok: #0f7a4a;
+  --ok-bg: #e8f6ef;
+  --error: #b42318;
+  --error-bg: #fdecea;
+  --focus: #f0a500;
+
+  /* type: Inter (Google Fonts, latin-ext covers ə ğ ı ş ç ö ü) */
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fs-xs: .8125rem;
+  --fs-sm: .9375rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: clamp(1.25rem, 1.1rem + .6vw, 1.5rem);
+  --fs-2xl: clamp(1.6rem, 1.3rem + 1.4vw, 2.25rem);
+  --fs-3xl: clamp(2rem, 1.5rem + 2.4vw, 3.25rem);
+  --fs-4xl: clamp(2.3rem, 1.6rem + 3.4vw, 4rem);
+  --lh-tight: 1.15;
+  --lh: 1.65;
+
+  /* space / shape / depth */
+  --wrap: 1200px;
+  --gutter: 16px;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px;
+  --space-6: 32px; --space-7: 48px; --space-8: 64px; --space-9: 96px;
+  --section-y: clamp(56px, 4rem + 3vw, 112px);
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, .06), 0 1px 3px rgba(15, 23, 42, .08);
+  --shadow: 0 10px 30px -12px rgba(15, 23, 42, .18);
+  --shadow-lg: 0 24px 60px -20px rgba(7, 13, 26, .35);
+  --tap: 44px;            /* minimum touch target */
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --dur: .22s;
+  --header-h: 72px;
+}
+@media (min-width: 768px) { :root { --gutter: 24px; } }
+@media (min-width: 1280px) { :root { --gutter: 32px; } }
