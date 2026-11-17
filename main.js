@@ -1,4 +1,4 @@
-// Net Pro Group – shared interactions (vanilla JS)
+// Net Pro Group – shared interactions (vanilla JS). Generated from tools/js/*.js by tools/build-pages.js. Do not edit.
 
 // URL of the deployed inquiry API (backend/ on Render), without a trailing slash, e.g.
 // 'https://net-pro-group-api.onrender.com'. Empty = contact forms open the mail app (mailto).
@@ -7,6 +7,8 @@
 const NPG_API_URL = '';
 
 (function () {
+  /* ---- js/10-core.js ---- */
+  // Helpers, API client, header navigation
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const IS_LOCAL = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
@@ -70,6 +72,8 @@ const NPG_API_URL = '';
     });
   });
 
+  /* ---- js/20-home.js ---- */
+  // Home page: sliders and gallery strip
   /* Generic one-at-a-time slider */
   function slider(items, onChange) {
     let i = 0;
@@ -102,6 +106,7 @@ const NPG_API_URL = '';
     }));
   }
 
+  /* ---- js/30-lightbox.js ---- */
   /* Gallery lightbox */
   const lb = $('#lightbox');
   if (lb && typeof lb.showModal === 'function') {
@@ -115,6 +120,7 @@ const NPG_API_URL = '';
     lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
   }
 
+  /* ---- js/40-forms.js ---- */
   /* Contact forms: validate, then send to the API (saved as an inquiry).
      Without the API (not set, asleep or unreachable) the mail app opens with a prepared message. */
   const forms = $$('.contact-form');
@@ -203,6 +209,7 @@ const NPG_API_URL = '';
     });
   });
 
+  /* ---- js/50-search.js ---- */
   /* Site search */
   const results = $('#search-results');
   if (results) {
