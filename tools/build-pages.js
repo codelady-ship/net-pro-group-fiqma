@@ -41,5 +41,18 @@ if (jsFiles.length) {
   fs.writeFileSync(OUT + 'main.js', `// Net Pro Group – shared interactions (vanilla JS). Generated from tools/js/*.js by tools/build-pages.js. Do not edit.\n\n${config}\n\n(function () {\n${rest}\n})();\n`);
 }
 
+// Admin panel (admin.html, noindex, not in the sitemap): tools/admin/* -> admin.html, admin.css, admin.js.
+// admin.js gets the API URL from js/00-config.js and the sandbox sample data from backend/src/demoInquiries.js.
+{
+  const dir = path.join(__dirname, 'admin');
+  const read = f => fs.readFileSync(path.join(dir, f), 'utf8');
+  fs.writeFileSync(OUT + 'admin.html', read('admin.html'));
+  fs.writeFileSync(OUT + 'admin.css', '/* Generated from tools/admin/admin.css by tools/build-pages.js. Do not edit. */\n' + read('admin.css'));
+  const config = fs.readFileSync(path.join(__dirname, 'js', '00-config.js'), 'utf8').trim();
+  const demo = JSON.stringify(require('../backend/src/demoInquiries'), null, 1);
+  const body = read('admin.js').trim().split(/\r?\n/).map(l => l ? '  ' + l : l).join('\n');
+  fs.writeFileSync(OUT + 'admin.js', `// Net Pro Group admin panel. Generated from tools/admin/admin.js by tools/build-pages.js. Do not edit.\n\n${config}\n\n// Sample inquiries for the in-browser demo sandbox (backend/src/demoInquiries.js)\nconst DEMO_INQUIRIES = ${demo};\n\n(function () {\n${body}\n})();\n`);
+}
+
 seo.siteFiles(built, (file, text) => fs.writeFileSync(OUT + file, text));
 console.log('built', built.length, 'pages');

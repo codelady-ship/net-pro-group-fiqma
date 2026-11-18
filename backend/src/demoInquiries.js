@@ -1,0 +1,15 @@
+// Sample inquiries for the public demo admin (fictional people, example.com addresses).
+// Used by `npm run seed:demo` (stored with demo: true) and, through tools/build-pages.js,
+// by the in-browser sandbox of admin.html when the API is unreachable.
+// daysAgo is turned into createdAt when the data is seeded or loaded.
+module.exports = [
+  { reference: "NPG-DE0101", daysAgo: 0, name: "Rauf Məmmədov", email: "rauf.m@example.com", phone: "+994 50 000 01 01", topic: "Liebert® GXT5 UPS", page: "mehsullar-1.html", status: "new", message: "Server otağımız üçün 10 kVA UPS lazımdır. Qiymət təklifi və çatdırılma müddətini göndərə bilərsiniz?", notes: [] },
+  { reference: "NPG-DE0102", daysAgo: 1, name: "Leyla Həsənova", email: "leyla.h@example.com", phone: "", topic: "Helpdesk", page: "xidmetler.html", status: "in_progress", message: "Ofisimizdə 40 istifadəçi üçün aylıq IT dəstək xidməti ilə maraqlanırıq. Şərtlər necədir?", notes: [{ text: "Zəng edildi, görüş cümə axşamı.", daysAgo: 0 }] },
+  { reference: "NPG-DE0103", daysAgo: 2, name: "Orxan Quliyev", email: "orxan.q@example.com", phone: "+994 55 000 02 02", topic: "Rack PDU", page: "mehsullar-3.html", status: "new", message: "İki rack üçün monitorinqli PDU axtarırıq. Hansı modelləri təklif edirsiniz?", notes: [] },
+  { reference: "NPG-DE0104", daysAgo: 3, name: "Nigar Əliyeva", email: "nigar.a@example.com", phone: "+994 70 000 03 03", topic: "Liebert® GXT5 UPS", page: "mehsullar-1.html", status: "closed", message: "Əvvəl aldığımız UPS üçün batareya dəyişimi lazımdır. Servis xidməti göstərirsiniz?", notes: [{ text: "Təklif göndərildi və qəbul edildi.", daysAgo: 2 }] },
+  { reference: "NPG-DE0105", daysAgo: 4, name: "Tural İsmayılov", email: "tural.i@example.com", phone: "", topic: "Statik ötürmə açarı", page: "mehsullar-5.html", status: "in_progress", message: "Data mərkəzimiz üçün iki mənbə arasında avtomatik keçid sistemi qurmaq istəyirik.", notes: [] },
+  { reference: "NPG-DE0106", daysAgo: 6, name: "Aysel Rzayeva", email: "aysel.r@example.com", phone: "+994 51 000 04 04", topic: "Şəbəkə quraşdırılması", page: "xidmetler.html", status: "new", message: "Yeni ofisdə 25 iş yeri üçün struktur kabel sistemi və Wi-Fi quraşdırılması lazımdır.", notes: [] },
+  { reference: "NPG-DE0107", daysAgo: 8, name: "Kamran Babayev", email: "kamran.b@example.com", phone: "+994 50 000 05 05", topic: "DC enerji sistemi", page: "mehsullar-2.html", status: "closed", message: "Telekom avadanlığı üçün 48V DC enerji sistemi haqqında texniki məlumat istəyirəm.", notes: [{ text: "Broşür e-poçtla göndərildi.", daysAgo: 7 }] },
+  { reference: "NPG-DE0108", daysAgo: 10, name: "Günay Səfərova", email: "gunay.s@example.com", phone: "", topic: "Monitorinq", page: "mehsullar-6.html", status: "new", message: "Server otağında temperatur və rütubət monitorinqi üçün həll axtarırıq.", notes: [] },
+  { reference: "NPG-DE0109", daysAgo: 12, name: "Buy Cheap Links", email: "seo@example.com", phone: "", topic: "", page: "elaqe.html", status: "spam", message: "Best SEO backlinks for your website, cheap price, click here now!!!", notes: [] },
+];

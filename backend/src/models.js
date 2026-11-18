@@ -13,6 +13,7 @@ const inquirySchema = new mongoose.Schema(
     topic: { type: String, trim: true, maxlength: 120, default: "" }, // product or service from ?movzu=
     page: { type: String, trim: true, maxlength: 60, default: "" }, // page the form was sent from
     status: { type: String, enum: STATUSES, default: "new", index: true },
+    demo: { type: Boolean, default: false, index: true }, // sample inquiry from `npm run seed:demo`
     notes: [
       {
         _id: false,
