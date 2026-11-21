@@ -21,5 +21,9 @@ services:
         sync: false
       - key: ADMIN_PASSWORD
         sync: false
+      # Public read-only demo admin (demo@netprogroup.az / demo1234): sees only the sample inquiries
+      # from `npm run seed:demo`; every write returns 403. Set to "false" to turn it off.
+      - key: DEMO_LOGIN
+        value: "true"
       - key: CORS_ORIGINS
         value: https://codelady-ship.github.io

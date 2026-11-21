@@ -2,7 +2,7 @@ const crypto = require("crypto");
 const express = require("express");
 const { z } = require("zod");
 const { createBaseApp, publicWriteLimiter } = require("./lib/base");
-const { requireAdmin } = require("./lib/auth");
+const { requireAdmin, blockDemo } = require("./lib/auth");
 const { HttpError, validate, notFound, errorHandler } = require("./lib/errors");
 const { STATUSES, Inquiry } = require("./models");
 
@@ -26,6 +26,9 @@ const updateSchema = z
   .object({ status: z.enum(STATUSES).optional(), note: z.string().trim().min(1).max(1000).optional() })
   .refine((u) => u.status || u.note, "Send a status or a note");
 
+// The read-only demo role sees only the seeded sample inquiries, never real visitors' messages.
+const scope = (req) => (req.isDemo ? { demo: true } : {});
+
 function createApp() {
   const app = createBaseApp();
   const api = express.Router();
@@ -47,7 +50,7 @@ function createApp() {
 
   /* ----- Admin (JWT) ----- */
   api.get("/admin/inquiries", requireAdmin, async (req, res) => {
-    const filter = {};
+    const filter = scope(req);
     if (req.query.status) filter.status = String(req.query.status);
     else filter.status = { $ne: "spam" };
     if (req.query.q) {
@@ -63,12 +66,12 @@ function createApp() {
   });
 
   api.get("/admin/inquiries/:reference", requireAdmin, async (req, res) => {
-    const doc = await Inquiry.findOne({ reference: String(req.params.reference).toUpperCase() });
+    const doc = await Inquiry.findOne({ ...scope(req), reference: String(req.params.reference).toUpperCase() });
     if (!doc) throw new HttpError(404, "Inquiry not found");
     res.json(doc);
   });
 
-  api.patch("/admin/inquiries/:reference", requireAdmin, validate(updateSchema), async (req, res) => {
+  api.patch("/admin/inquiries/:reference", requireAdmin, blockDemo, validate(updateSchema), async (req, res) => {
     const update = {};
     if (req.body.status) update.$set = { status: req.body.status };
     if (req.body.note) update.$push = { notes: { text: req.body.note } };
@@ -77,18 +80,19 @@ function createApp() {
     res.json(doc);
   });
 
-  api.delete("/admin/inquiries/:reference", requireAdmin, async (req, res) => {
+  api.delete("/admin/inquiries/:reference", requireAdmin, blockDemo, async (req, res) => {
     const doc = await Inquiry.findOneAndDelete({ reference: String(req.params.reference).toUpperCase() });
     if (!doc) throw new HttpError(404, "Inquiry not found");
     res.status(204).end();
   });
 
   // Dashboard numbers: inquiries per status and the most asked-about topics.
-  api.get("/admin/stats", requireAdmin, async (_req, res) => {
+  api.get("/admin/stats", requireAdmin, async (req, res) => {
+    const base = scope(req);
     const [byStatus, topTopics] = await Promise.all([
-      Inquiry.aggregate([{ $group: { _id: "$status", count: { $sum: 1 } } }]),
+      Inquiry.aggregate([{ $match: base }, { $group: { _id: "$status", count: { $sum: 1 } } }]),
       Inquiry.aggregate([
-        { $match: { topic: { $ne: "" }, status: { $ne: "spam" } } },
+        { $match: { ...base, topic: { $ne: "" }, status: { $ne: "spam" } } },
         { $group: { _id: "$topic", count: { $sum: 1 } } },
         { $sort: { count: -1, _id: 1 } },
         { $limit: 10 },

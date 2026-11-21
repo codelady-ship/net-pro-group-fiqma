@@ -19,7 +19,7 @@ let reference;
 const valid = { name: "Test Müştəri", email: "Test@Example.com", phone: "+994 50 000 00 00", message: "UPS sistemi haqqında qiymət təklifi istəyirəm.", topic: "Liebert® GXT5 UPS", page: "elaqe.html" };
 
 before(async () => {
-  mongo = await MongoMemoryServer.create();
+  mongo = await MongoMemoryServer.create({ instance: { launchTimeout: 60000 } }); // slow first start on Windows
   await mongoose.connect(mongo.getUri("npg-test"));
   app = createApp();
   const login = await request(app).post("/api/auth/login").send({ email: "admin@test.local", password: "test-password" });
@@ -80,4 +80,9 @@ test("admin: workflow, search, notes, stats, delete", async () => {
 
   assert.equal((await request(app).delete(`/api/admin/inquiries/${reference}`).set(auth)).status, 204);
   assert.equal((await request(app).get(`/api/admin/inquiries/${reference}`).set(auth)).status, 404);
+});
+
+test("demo login is off unless DEMO_LOGIN=true", async () => {
+  const res = await request(app).post("/api/auth/login").send({ email: "demo@netprogroup.az", password: "demo1234" });
+  assert.equal(res.status, 401);
 });
